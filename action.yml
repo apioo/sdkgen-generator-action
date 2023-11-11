@@ -1,0 +1,30 @@
+name: 'SDKgen Code Generator'
+description: 'This action integrates the SDKgen code generator'
+author: 'Apioo'
+branding:
+  icon: archive
+  color: blue
+inputs:
+  client_id:
+    description: 'The sdkgen.app client id, this is either your username or an app key'
+    required: true
+  client_secret:
+    description: 'The sdkgen.app client secret, this is either your password or an app secret'
+    required: true
+  token:
+    description: 'Github access token to be able to commit the files to your repository'
+    required: false
+    default: ${{ github.token }}
+  repository:
+    description: 'The target repository'
+    required: false
+    default: ${{ github.repository }}
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.client_id }}
+    - ${{ inputs.client_secret }}
+  env:
+    GITHUB_TOKEN: ${{ inputs.token }}
+    GITHUB_REPOSITORY: ${{ inputs.repository }}
