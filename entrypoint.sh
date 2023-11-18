@@ -1,9 +1,4 @@
 #!/bin/sh -l
-if [ $GITHUB_REF_TYPE == 'tag' ]
-then
-  echo 'Skip generation for tag'
-  exit
-fi
 /usr/local/bin/sdkgen install --client-id=\"$1\" --client-secret=\"$2\" --remove
 git config --global user.name "SDKgen-Bot";
 git config --global user.email "bot@sdkgen.app";
