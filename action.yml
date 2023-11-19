@@ -22,9 +22,8 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.client_id }}
-    - ${{ inputs.client_secret }}
   env:
+    SDKGEN_CLIENT_ID: ${{ inputs.client_id }}
+    SDKGEN_CLIENT_SECRET: ${{ inputs.client_secret }}
     GITHUB_TOKEN: ${{ inputs.token }}
     GITHUB_REPOSITORY: ${{ inputs.repository }}
