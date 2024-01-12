@@ -1,4 +1,10 @@
 #!/bin/sh -l
+git symbolic-ref -q HEAD
+if [ $? -eq 1 ]
+then
+  echo "Git is in detached HEAD mode skip ..."
+  exit
+fi
 /usr/local/bin/sdkgen update --remove
 git config --global user.name "SDKgen-Bot";
 git config --global user.email "bot@sdkgen.app";
