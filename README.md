@@ -21,6 +21,8 @@ secret you need to register an account at [sdkgen.app](https://sdkgen.app/).
 name: SDKgen
 on:
   - workflow_dispatch
+permissions:
+  contents: 'write'
 jobs:
   generate:
     runs-on: ubuntu-latest
