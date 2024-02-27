@@ -19,6 +19,15 @@ inputs:
     description: 'The target repository'
     required: false
     default: ${{ github.repository }}
+  typehub_message:
+    description: 'The TypeHub commit message, only available for commits'
+    required: false
+  typehub_version:
+    description: 'The TypeHub tag version, only available for tags'
+    required: false
+  typehub_changelog:
+    description: 'The TypeHub tag changelog, only available for tags'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -27,3 +36,6 @@ runs:
     SDKGEN_CLIENT_SECRET: ${{ inputs.client_secret }}
     GITHUB_TOKEN: ${{ inputs.token }}
     GITHUB_REPOSITORY: ${{ inputs.repository }}
+    TYPEHUB_MESSAGE: ${{ inputs.typehub_message }}
+    TYPEHUB_VERSION: ${{ inputs.typehub_version }}
+    TYPEHUB_CHANGELOG: ${{ inputs.typehub_changelog }}
