@@ -8,8 +8,6 @@ then
   echo "Creating tag $TYPEHUB_VERSION ..."
   git tag -a "v$TYPEHUB_VERSION" -m "$TYPEHUB_CHANGELOG"
   git push https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git "v$TYPEHUB_VERSION"
-
-  gh release create "v$TYPEHUB_VERSION" -n "$TYPEHUB_CHANGELOG"
   exit
 fi
 
