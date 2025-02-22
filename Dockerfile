@@ -1,4 +1,4 @@
-FROM apiootech/sdkgen:0.2
+FROM apiootech/sdkgen:0.3
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
