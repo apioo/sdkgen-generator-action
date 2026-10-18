@@ -27,7 +27,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: apioo/sdkgen-generator-action@v0.5
         with:
           client_id: '${{ secrets.SDKGEN_CLIENT_ID }}'
